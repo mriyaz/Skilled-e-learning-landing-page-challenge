@@ -1,0 +1,387 @@
+// Variables and Mixins
+$primary-color: black;
+$secondary-text-color: white;
+$primary-gradient: linear-gradient(180deg, #ff6f48 0.04%, #f02aa6 100%);
+$secondary-gradient: linear-gradient(180deg, #4851ff 0%, #f02aa6 99.92%);
+
+// Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Mixins for media queries
+@mixin tablet {
+    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+
+@mixin respond-to($media) {
+    @if $media ==mobile {
+        @media (max-width: $breakpoint-mobile) {
+            @content;
+        }
+    }
+
+    @else if $media ==tablet {
+        @media (max-width: $breakpoint-tablet) {
+            @content;
+        }
+    }
+
+    @else if $media ==desktop {
+        @media (min-width: $breakpoint-desktop) {
+            @content;
+        }
+    }
+}
+
+@mixin btn($bgcolorgrad) {
+    background-color: $bgcolorgrad;
+    background: $bgcolorgrad ;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 50%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+// Base styles
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
+
+}
+
+.nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p {
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+
+}
+
+.hero-image {
+    display: none;
+}
+
+header {
+    padding: 3%;
+
+    nav {
+        .nav-button {
+            @include btn(black);
+        }
+
+    }
+}
+
+main {
+    padding: 3%;
+
+    .hero {
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-button {
+            @include btn($primary-gradient);
+        }
+    }
+
+    .courses {
+
+        h2 {
+            font-size: larger;
+            background: $primary-gradient;
+            color: $secondary-text-color;
+            padding: 5%;
+            border-radius: 10px;
+            margin-bottom: 10%;
+        }
+
+
+
+        .course {
+            margin-top: 10%;
+            background-color: $secondary-text-color;
+            padding: 5%;
+            border-radius: 10px;
+            margin-bottom: 10%;
+
+            img {
+                margin-top: -15%;
+                margin-bottom: 2%;
+            }
+
+            h3 {}
+
+            .get-started-link {
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: #f02aa6;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 50%;
+                }
+
+            }
+
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7.5% 5%;
+
+    background-color: $primary-color;
+
+    .footer-btn {
+        @include btn($secondary-gradient);
+    }
+}
+
+
+
+// Styles for tablets
+@include tablet {
+
+    // Tablet styles
+    .hero-image {
+        display: block;
+
+        position: absolute;
+        margin-top: -80px;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 80vh;
+        background-image: url('assets/image-hero-tablet.png');
+        background-repeat: no-repeat;
+
+    }
+
+    header {
+        padding: 3% 5%;
+    }
+
+    main {
+        padding: 3% 5%;
+
+        .hero {
+            max-width: 45%;
+            margin-bottom: 10%;
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+        }
+
+        .stats {
+            display: none;
+        }
+
+        .courses {
+            // margin-top: 25%;
+            padding-top: 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 5%;
+
+            .sub-heading {
+                // flex: 1;
+                height: 300px;
+                width: 40%;
+                font-size: larger;
+                background: $primary-gradient;
+                color: $secondary-text-color;
+                margin-top: 5%;
+                padding: 76px 32px;
+                border-radius: 10px;
+            }
+
+
+            .course {
+                min-width: 40%;
+                height: 300px;
+                flex: 1;
+                margin-top: 5%;
+                background-color: $secondary-text-color;
+                padding: 5%;
+                border-radius: 10px;
+                // margin-bottom: 7%;
+
+                img {
+                    margin-top: -50%;
+                    margin-bottom: 7%;
+                }
+
+                h3 {}
+
+                .get-started-link {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: #f02aa6;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 50%;
+                    }
+
+                }
+
+            }
+        }
+    }
+}
+
+//Styles for the desktops
+@include desktop {
+    // Desktop styles 
+
+    .hero-image {
+        display: block;
+        position: absolute;
+        margin-top: -160px;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100vh;
+        background-image: url('assets/image-hero-desktop.png'); //
+        background-repeat: no-repeat;
+        z-index: -99;
+
+    }
+
+    header {
+        padding: 1% 5% 3% 15%;
+
+    }
+
+    main {
+        padding: 3% 5% 3% 15%;
+        max-width: 80%;
+
+
+        .hero {
+            max-width: 45%;
+
+            margin: 10% 0;
+
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+        }
+
+        .stats {
+            display: none;
+        }
+
+        .courses {
+            //margin-top: 25%;
+            padding-top: 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 5%;
+
+            .sub-heading {
+                // flex: 1;
+                width: 30%;
+                height: 300px;
+                font-size: larger;
+                background: $primary-gradient;
+                color: $secondary-text-color;
+                margin-top: 5%;
+                padding: 106px 32px;
+                border-radius: 10px;
+            }
+
+
+            .course {
+                width: 30%;
+                height: 300px;
+                // flex: 1;
+                margin-top: 5%;
+                background-color: $secondary-text-color;
+                padding: 5%;
+                border-radius: 10px;
+                position: relative;
+                // margin-bottom: 7%;
+
+                img {
+                    position: absolute;
+                    margin-top: -22.5%;
+                    margin-bottom: 7%;
+                }
+
+                h3 {
+                    padding-bottom: 5%;
+                }
+
+                // p {
+                //     font-size: 0.85rem;
+                //     line-height: 1.5rem;
+                //     opacity: 0.6;
+                //     margin-bottom: 0;
+
+                // }
+
+                .get-started-link {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: #f02aa6;
+                    cursor: pointer;
+                    margin-bottom: 0px;
+                    margin-top: 10px;
+
+                    &:hover {
+                        opacity: 50%;
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    footer {
+        padding: 7.5% 5% 7.5% 15%;
+
+    }
+}

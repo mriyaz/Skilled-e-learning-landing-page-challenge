@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
+}
+
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  font-size: 0.85rem;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero-image {
+  display: none;
+}
+
+header {
+  padding: 3%;
+}
+header nav .nav-button {
+  background-color: black;
+  background: black;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+header nav .nav-button:hover {
+  opacity: 50%;
+}
+
+main {
+  padding: 3%;
+}
+main .hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+main .hero .hero-button {
+  background-color: linear-gradient(180deg, #ff6f48 0.04%, #f02aa6 100%);
+  background: linear-gradient(180deg, #ff6f48 0.04%, #f02aa6 100%);
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+main .hero .hero-button:hover {
+  opacity: 50%;
+}
+main .courses h2 {
+  font-size: larger;
+  background: linear-gradient(180deg, #ff6f48 0.04%, #f02aa6 100%);
+  color: white;
+  padding: 5%;
+  border-radius: 10px;
+  margin-bottom: 10%;
+}
+main .courses .course {
+  margin-top: 10%;
+  background-color: white;
+  padding: 5%;
+  border-radius: 10px;
+  margin-bottom: 10%;
+}
+main .courses .course img {
+  margin-top: -15%;
+  margin-bottom: 2%;
+}
+main .courses .course .get-started-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f02aa6;
+  cursor: pointer;
+}
+main .courses .course .get-started-link:hover {
+  opacity: 50%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7.5% 5%;
+  background-color: black;
+}
+footer .footer-btn {
+  background-color: linear-gradient(180deg, #4851ff 0%, #f02aa6 99.92%);
+  background: linear-gradient(180deg, #4851ff 0%, #f02aa6 99.92%);
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+footer .footer-btn:hover {
+  opacity: 50%;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-image {
+    display: block;
+    position: absolute;
+    margin-top: -80px;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 80vh;
+    background-image: url("assets/image-hero-tablet.png");
+    background-repeat: no-repeat;
+  }
+  header {
+    padding: 3% 5%;
+  }
+  main {
+    padding: 3% 5%;
+  }
+  main .hero {
+    max-width: 45%;
+    margin-bottom: 10%;
+  }
+  main .hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  main .stats {
+    display: none;
+  }
+  main .courses {
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
+  main .courses .sub-heading {
+    height: 300px;
+    width: 40%;
+    font-size: larger;
+    background: linear-gradient(180deg, #ff6f48 0.04%, #f02aa6 100%);
+    color: white;
+    margin-top: 5%;
+    padding: 76px 32px;
+    border-radius: 10px;
+  }
+  main .courses .course {
+    min-width: 40%;
+    height: 300px;
+    flex: 1;
+    margin-top: 5%;
+    background-color: white;
+    padding: 5%;
+    border-radius: 10px;
+  }
+  main .courses .course img {
+    margin-top: -50%;
+    margin-bottom: 7%;
+  }
+  main .courses .course .get-started-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f02aa6;
+    cursor: pointer;
+  }
+  main .courses .course .get-started-link:hover {
+    opacity: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-image {
+    display: block;
+    position: absolute;
+    margin-top: -160px;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-image: url("assets/image-hero-desktop.png");
+    background-repeat: no-repeat;
+    z-index: -99;
+  }
+  header {
+    padding: 1% 5% 3% 15%;
+  }
+  main {
+    padding: 3% 5% 3% 15%;
+    max-width: 80%;
+  }
+  main .hero {
+    max-width: 45%;
+    margin: 10% 0;
+  }
+  main .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  main .stats {
+    display: none;
+  }
+  main .courses {
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5%;
+  }
+  main .courses .sub-heading {
+    width: 30%;
+    height: 300px;
+    font-size: larger;
+    background: linear-gradient(180deg, #ff6f48 0.04%, #f02aa6 100%);
+    color: white;
+    margin-top: 5%;
+    padding: 106px 32px;
+    border-radius: 10px;
+  }
+  main .courses .course {
+    width: 30%;
+    height: 300px;
+    margin-top: 5%;
+    background-color: white;
+    padding: 5%;
+    border-radius: 10px;
+    position: relative;
+  }
+  main .courses .course img {
+    position: absolute;
+    margin-top: -22.5%;
+    margin-bottom: 7%;
+  }
+  main .courses .course h3 {
+    padding-bottom: 5%;
+  }
+  main .courses .course .get-started-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f02aa6;
+    cursor: pointer;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+  main .courses .course .get-started-link:hover {
+    opacity: 50%;
+  }
+  footer {
+    padding: 7.5% 5% 7.5% 15%;
+  }
+}/*# sourceMappingURL=styles.css.map */
